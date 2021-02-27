@@ -1,150 +1,142 @@
-import * as React from "react"
+import * as React from "react";
 
 // styles
 const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
+  backgroundColor: "#F3F2EE",
+  height: "100vh",
+  width: "100vw",
+};
+
 const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: "300",
-  fontSize: "24px",
-  maxWidth: "560px",
-}
+  fontWeight: 500,
+  color: "#fff",
+  fontFamily: "Railway, sans-serif",
+};
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: "16px",
-  verticalAlign: "5%",
-}
+const subheadingStyles = {
+  fontWeight: 600,
+  fontFamily: "Railway, sans-serif",
+};
 
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
+const topBarStyles = {
+  height: "80px",
+  backgroundColor: "#0A66C2",
+  width: "100%",
+  display: "flex",
+  alignItems: "center",
+};
 
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: "14px",
-}
-
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
-// data
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#000000",
-  },
-]
+const iconStyles = {
+  height: "80%",
+  width: "auto",
+};
 
 // markup
 const IndexPage = () => {
   return (
     <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time.{" "}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
-      </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap"
+        rel="stylesheet"
+      ></link>
+      <div style={topBarStyles}>
+        <svg
+          style={iconStyles}
+          width="328"
+          height="328"
+          viewBox="0 0 328 328"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="328" height="328" rx="10" fill="#0A66C2" />
+          <circle
+            cx="164"
+            cy="164"
+            r="110.5"
+            stroke="#FF4646"
+            stroke-width="25"
+          />
+          <rect
+            x="77.5278"
+            y="57.6484"
+            width="172.945"
+            height="218.667"
+            rx="5"
+            fill="white"
+          />
+          <circle cx="90.4487" cy="78.5211" r="4.9697" stroke="black" />
+          <circle cx="106.352" cy="78.521" r="4.9697" stroke="black" />
+          <circle cx="122.255" cy="78.521" r="4.9697" stroke="black" />
+          <rect
+            x="133.188"
+            y="73.5513"
+            width="111.321"
+            height="9.93939"
+            rx="3"
+            stroke="black"
+          />
+          <line
+            x1="77.5278"
+            y1="98.8937"
+            x2="250.473"
+            y2="98.8937"
+            stroke="black"
+          />
+          <rect
+            x="89.9551"
+            y="111.821"
+            width="20.8667"
+            height="140.139"
+            rx="4.5"
+            fill="#F3F2EE"
+            stroke="black"
+          />
+          <rect
+            x="217.179"
+            y="111.821"
+            width="20.8667"
+            height="140.139"
+            rx="4.5"
+            fill="#F3F2EE"
+            stroke="black"
+          />
+          <rect
+            x="131.701"
+            y="111.821"
+            width="64.6"
+            height="18.8788"
+            rx="2.5"
+            fill="#F3F2EE"
+            stroke="black"
+          />
+          <path
+            d="M131.201 155.009C134.587 149.779 136.485 151.156 139.871 155.009C143.595 160.759 145.683 159.968 149.407 155.009C152.158 150.19 153.991 149.364 158.366 155.009C162.276 159.876 164.218 159.645 167.325 155.009C170.521 149.944 172.572 150.268 176.572 155.009C181.079 160.311 182.946 159.376 185.82 155.009C189.298 149.793 191.718 149.888 196.801 155.009"
+            stroke="black"
+          />
+          <path
+            d="M131.201 186.815C134.587 181.586 136.485 182.962 139.871 186.815C143.595 192.565 145.683 191.774 149.407 186.815C152.158 181.996 153.991 181.17 158.366 186.815C162.276 191.682 164.218 191.451 167.325 186.815C170.521 181.75 172.572 182.074 176.572 186.815C181.079 192.117 182.946 191.182 185.82 186.815C189.298 181.599 191.718 181.694 196.801 186.815"
+            stroke="black"
+          />
+          <path
+            d="M131.201 222.596C134.587 217.367 136.485 218.744 139.871 222.596C143.595 228.347 145.683 227.555 149.407 222.596C152.158 217.777 153.991 216.952 158.366 222.596C162.276 227.463 164.218 227.233 167.325 222.596C170.521 217.532 172.572 217.856 176.572 222.596C181.079 227.899 182.946 226.964 185.82 222.596C189.298 217.381 191.718 217.476 196.801 222.596"
+            stroke="black"
+          />
+          <mask id="path-15-inside-1" fill="white">
+            <path d="M275.498 112.065C289.272 141.636 290.735 175.467 279.565 206.117C268.394 236.767 245.506 261.724 215.935 275.498C186.364 289.272 152.533 290.735 121.883 279.565C91.2334 268.394 66.2765 245.506 52.5024 215.935L164 164L275.498 112.065Z" />
+          </mask>
+          <path
+            d="M275.498 112.065C289.272 141.636 290.735 175.467 279.565 206.117C268.394 236.767 245.506 261.724 215.935 275.498C186.364 289.272 152.533 290.735 121.883 279.565C91.2334 268.394 66.2765 245.506 52.5024 215.935L164 164L275.498 112.065Z"
+            stroke="#FF4646"
+            stroke-width="50"
+            mask="url(#path-15-inside-1)"
+          />
+        </svg>
+        <h1 style={headingStyles}>Feedblocker</h1>
+      </div>
+      <h2 style={subheadingStyles}>Reduce distractions</h2>
     </main>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
