@@ -1,48 +1,32 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
+import styles from "../styles/index.module.scss";
 
-// styles
-const pageStyles = {
-  backgroundColor: "#F3F2EE",
-  height: "100vh",
-  width: "100vw",
-};
-
-const headingStyles = {
-  fontWeight: 500,
-  color: "#fff",
-  fontFamily: "Railway, sans-serif",
-};
-
-const subheadingStyles = {
-  fontWeight: 600,
-  fontFamily: "Railway, sans-serif",
-};
-
-const topBarStyles = {
-  height: "80px",
-  backgroundColor: "#0A66C2",
-  width: "100%",
-  display: "flex",
-  alignItems: "center",
-};
-
-const iconStyles = {
-  height: "80%",
-  width: "auto",
-};
+const images = ["before.png", "after.png"];
 
 // markup
 const IndexPage = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const imageInterval = setInterval(() => {
+      setCurrentImage(currentImage === 0 ? 1 : 0);
+    }, 3000);
+
+    return () => {
+      clearInterval(imageInterval);
+    };
+  });
+
   return (
-    <main style={pageStyles}>
+    <main className={styles.Page}>
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link
         href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap"
         rel="stylesheet"
       ></link>
-      <div style={topBarStyles}>
+      <div className={styles.TopBar}>
         <svg
-          style={iconStyles}
+          className={styles.Icon}
           width="328"
           height="328"
           viewBox="0 0 328 328"
@@ -132,9 +116,76 @@ const IndexPage = () => {
             mask="url(#path-15-inside-1)"
           />
         </svg>
-        <h1 style={headingStyles}>Feedblocker</h1>
+        <h1 className={styles.Heading}>Feedblocker</h1>
       </div>
-      <h2 style={subheadingStyles}>Reduce distractions</h2>
+      <div className={`${styles.Body} ${styles.FirstRow}`}>
+        <div className={styles.Left}>
+          <div>
+            <h2 className={styles.HeroTitle}>Reduce Distractions</h2>
+            <p>Remove feeds from LinkedIn</p>
+            <a
+              className={styles.Link}
+              target="_blank"
+              href="https://chrome.google.com/webstore/detail/feedblocker/obehkecmojmkiikdffbmnobnnmgikkfa"
+            >
+              Add to Chrome
+            </a>
+          </div>
+        </div>
+        <div className={styles.Right}>
+          <img
+            className={styles.Image}
+            id="before-image"
+            src={images[currentImage]}
+          />
+        </div>
+      </div>
+      <div
+        className={`${styles.Body} ${styles.SecondRow} ${styles.WhiteBackground}`}
+      >
+        <div>
+          <h2 className={styles.Subheading}>Why block feeds?</h2>
+        </div>
+
+        <div className={styles.ParagraphContainer}>
+          <p className={styles.Paragraph}>
+            Ever felt overwhelmed by all the content available on feeds across
+            social media? Ever went to a website with one purpose then got
+            distracted as you were browsing in the never-ending content
+            displayed on feeds? FeedBlocker is here to help!
+          </p>
+          <p>
+            Our goal at FeedBlocker is to reduce distractions by showing you
+            only the content you want to see. No more unwanted content. No more
+            distractions.
+          </p>
+        </div>
+      </div>
+      {/* install, pin, remove */}
+      <div className={`${styles.Body} ${styles.SecondRow}`}>
+        <div>
+          <h2 className={styles.Subheading}>Who are we?</h2>
+        </div>
+        <div className={styles.ParagraphContainer}>
+          <p className={styles.Paragraph}>
+            We are a group of 3 industrial engineers who came together to build
+            functional things that we would want to use ourselves.
+          </p>
+          <p>
+            Despite a strong urge to sleep, we wake early every Saturday morning
+            to work together on what we love doing the most. Finding solutions
+            to everyday challenges.
+          </p>
+          <p>
+            During our meetings, we identified that we spend endless hours on
+            social media feeds even though we do not necessarily want to. From
+            one post to the next, we get distracted and lose valuable time. As
+            such, we dedicated our first project to create a FeedBlocker. A
+            FeedBlocker on LinkedIn to reduce distractions and free up our time
+            to continue doing what we love doing the most.
+          </p>
+        </div>
+      </div>
     </main>
   );
 };
