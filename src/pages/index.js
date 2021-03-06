@@ -180,9 +180,9 @@ const IndexPage = () => {
             During our meetings, we identified that we spend endless hours on
             social media feeds even though we do not necessarily want to. From
             one post to the next, we get distracted and lose valuable time. As
-            such, we dedicated our first project to create a FeedBlocker. A
-            FeedBlocker on LinkedIn to reduce distractions and free up our time
-            to continue doing what we love doing the most.
+            such, we dedicated our first project to create a FeedBlocker. A feed
+            blocker on LinkedIn to reduce distractions and free up our time to
+            continue doing what we love doing the most.
           </p>
         </div>
       </div>
