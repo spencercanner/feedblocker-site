@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "../styles/index.module.scss";
 
 const images = ["before.png", "after.png"];
+const launchImages = ["launch-before.png", "launch-after.png"];
 
 // markup
 const IndexPage = () => {
@@ -128,7 +129,7 @@ const IndexPage = () => {
               target="_blank"
               href="https://chrome.google.com/webstore/detail/feedblocker/obehkecmojmkiikdffbmnobnnmgikkfa"
             >
-              Add to Chrome
+              Install now
             </a>
           </div>
         </div>
@@ -161,8 +162,62 @@ const IndexPage = () => {
           </p>
         </div>
       </div>
-      {/* install, pin, remove */}
+      {/* install, turn on, turn off  */}
       <div className={`${styles.Body} ${styles.SecondRow}`}>
+        <div>
+          <h2 className={styles.Subheading}>How it works</h2>
+        </div>
+        <div className={styles.StepContainer}>
+          <div className={`${styles.Step}`}>
+            <div className={styles.ImageContainer}>
+              <img className={styles.StepImage} src="install-1.png" />
+              <img className={styles.StepImage} src="install-2.png" />
+            </div>
+            <h3 className={styles.StepTitle}>1. Install</h3>
+            <div>
+              Click on{" "}
+              <a
+                target="_blank"
+                href="https://chrome.google.com/webstore/detail/feedblocker/obehkecmojmkiikdffbmnobnnmgikkfa"
+              >
+                Install now
+              </a>{" "}
+              which will redirect you to the Chrome Web Store. Once there, press
+              “Add to Chrome” in the top right corner, then click “Add
+              extension” if a pop-up appears
+            </div>
+          </div>
+          <div className={`${styles.Step}`}>
+            <div className={styles.ImageContainer}>
+              <img className={styles.StepImage} src="pin.png" />
+            </div>
+            <h3 className={styles.StepTitle}>2. Pin</h3>
+            <div>
+              In the top-right corner of Chrome, press on the puzzle icon. Then,
+              click on the pin icon to pin “Feedblocker” to the toolbar for easy
+              access to remove distractions whenever you need and want to.
+            </div>
+          </div>
+          <div className={`${styles.Step}`}>
+            <div className={styles.ImageContainer}>
+              <img
+                className={styles.StepImage}
+                src={launchImages[currentImage]}
+              />
+            </div>
+            <h3 className={styles.StepTitle}>3. Launch</h3>
+            <div>
+              Now that FeedBlocker is pinned, go to your LinkedIn’s feed and
+              click on the FeedBlocker icon in the top right corner to remove
+              distractions. To bring back the feed, click on the FeedBlocker
+              icon again.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className={`${styles.Body} ${styles.SecondRow} ${styles.WhiteBackground}`}
+      >
         <div>
           <h2 className={styles.Subheading}>Who are we?</h2>
         </div>
@@ -180,11 +235,22 @@ const IndexPage = () => {
             During our meetings, we identified that we spend endless hours on
             social media feeds even though we do not necessarily want to. From
             one post to the next, we get distracted and lose valuable time. As
-            such, we dedicated our first project to create a FeedBlocker. A feed
-            blocker on LinkedIn to reduce distractions and free up our time to
-            continue doing what we love doing the most.
+            such, we dedicated our first project to create a feed blocker on
+            LinkedIn to reduce distractions and free up our time to continue
+            doing what we love doing the most.
+          </p>
+          <p>
+            If you want to get a sneak peek into our journey to-date,&nbsp;
+            <a href="https://feedblocker.medium.com" target="_blank">
+              check out our diary
+            </a>
+            .
           </p>
         </div>
+      </div>
+      <div className={`${styles.Body} ${styles.Footer}`}>
+        <span>Contact us at&nbsp;</span>
+        <a href="mailto:hello@feedblocker.com">hello@feedblocker.com</a>
       </div>
     </main>
   );
