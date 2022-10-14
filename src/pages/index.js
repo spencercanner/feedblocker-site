@@ -223,7 +223,7 @@ const IndexPage = () => {
         </div>
         <div className={styles.ParagraphContainer}>
           <p className={styles.Paragraph}>
-            We are a group of 3 industrial engineers who came together to build
+            We are friends who came together to build
             functional things that we would want to use ourselves.
           </p>
           <p>
